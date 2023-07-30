@@ -18,7 +18,7 @@ Base = declarative_base()
 
 class LifestyleSleepData(Base):
     __tablename__ = 'lifestyle_sleep_data'
-    person_id = Column(Integer, primary_key=True, autoincrement=True)
+    person_id = Column(Integer, primary_key=True)
     gender = Column(String)
     age = Column(Integer)
     occupation = Column(String)
@@ -27,10 +27,11 @@ class LifestyleSleepData(Base):
     physical_activity_level = Column(Integer)
     stress_level = Column(Integer)
     BMI_category = Column(String)
-    blood_pressure = Column(String)
     heart_rate = Column(Integer)
     daily_steps = Column(Integer)
     sleep_disorder = Column(String)
+    systolic_blood_pressure = Column(Integer)
+    diastolic_blood_pressure = Column(Integer)
 
 
 # Create the table in the database
@@ -45,10 +46,10 @@ with open(os.path.join('data', 'Sleep_health_mk1.csv'), encoding='utf-8') as fil
     # skip header row
     next(csv_reader)
     for csv_row in csv_reader:
-        person_id, gender, age, occupation, sleep_duration, quality_of_sleep, physical_activity_level, stress_level, BMI_category, blood_pressure, heart_rate, daily_steps, sleep_disorder = csv_row
+        person_id, gender, age, occupation, sleep_duration, quality_of_sleep, physical_activity_level, stress_level, BMI_category, heart_rate, daily_steps, sleep_disorder, systolic_blood_pressure, diastolic_blood_pressure = csv_row
         db_row = LifestyleSleepData(person_id=person_id, gender=gender, age=age, occupation=occupation, sleep_duration=sleep_duration, quality_of_sleep=quality_of_sleep,
-                                    physical_activity_level=physical_activity_level, stress_level=stress_level, BMI_category=BMI_category, blood_pressure=blood_pressure,
-                                    heart_rate=heart_rate, daily_steps=daily_steps, sleep_disorder=sleep_disorder)
+                                    physical_activity_level=physical_activity_level, stress_level=stress_level, BMI_category=BMI_category,
+                                    heart_rate=heart_rate, daily_steps=daily_steps, sleep_disorder=sleep_disorder, systolic_blood_pressure=systolic_blood_pressure, diastolic_blood_pressure=diastolic_blood_pressure)
         session.add(db_row)
 
 session.commit()
