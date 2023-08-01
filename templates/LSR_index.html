@@ -6,12 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lifestyle Patterns and Sleep Disorders</title>
+    <!-- Tableau -->
     <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 </head>
-</body>
+<body>
+    <div class = 'title'>
+        <h1>Sleep Disorder Information and Predictor</h1>
+    </div>
+
+    <!---Tableau Visualization-->
 <tableau-viz id="tableauViz"
     src="https://public.tableau.com/views/Project4_16908592015390/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
     toolbar="bottom" hide-tabs>
 </tableau-viz>
 
+
+<p class="subtitle"><b>Fill out this form to see if you are at risk for a sleep disorder</b>
+</p>
+
+<form>
+    <label for="age">Age:</label>
+    <br>
+    <input type="text" id="age" name="age">
+    <br>
+    <br>
+    <label for="sleep_duration">Average Hours of Sleep:</label>
+    <br>
+    <input type="text" id="sleep_duration" name="sleep_duration">
+    <br>
+    <br>
+    <label for="quality_of_sleep">Rate your quality of sleep on a scale from 1-10 with 1 being poor and 10 being perfect:</label>
+    <br>
+    <input type="text" id="quality_of_sleep" name="quality_of_sleep">
+    <br>
+    <br>
+    <label for="physical_activity_level">Rate your level of physical activity on a scale of 30-90 with 30 being none and 90 being everyday:</label>
+    <br>
+    <input type="text" id="physical_activity_level" name="physical_activity_level">
+    <br>
+    <br>
+    <label for="stress_level">Average level of stress on a scale of 1-10 with 1 being none and 10 being high:</label>
+    <br>
+    <input type="text" id="stress_level" name="stress_level">
+    <br>
+    <br>
+    <label for="heart_rate">Average heart rate:</label>
+    <br>
+    <input type="text" id="heart_rate" name="heart_rate">
+    <br>
+    <br>
+    <label for="daily_steps">Average number of daily steps:</label>
+    <br>
+    <input type="text" id="daily_steps" name="daily_steps">
+    <br>
+    <br>
+    <label for="systolic_blood_pressure">Enter your systolic blood pressure:</label>
+    <br>
+    <input type="text" id="systolic_blood_pressure" name="systolic_blood_pressure">
+    <br>
+    <br>
+    <label for="diastolic_blood_pressure">Enter your diastolic blood pressure:</label>
+    <br>
+    <input type="text" id="diastolic_blood_pressure" name="diastolic_blood_pressure">
+    <br>
+    <br>
+    <p>Choose your occupation:</p>
+    <input type="checkbox" id="Nurse" name="Nurse" value="Nurse">
+    <label for="Nurse"> Nurse</label>
+    <br>
+    <input type="checkbox" id="Doctor" name="Doctor" value="Doctor">
+    <label for="Doctor"> Doctor</label>
+    <br>
+    <input type="checkbox" id="Engineer" name="Engineer" value="Engineer">
+    <label for="Engineer"> Engineer</label>
+    <br>
+    <input type="checkbox" id="Lawyer" name="Lawyer" value="Lawyer">
+    <label for="Lawyer"> Lawyer</label>
+    <br>
+    <input type="checkbox" id="Teacher" name="Teacher" value="Teacher">
+    <label for="Teacher"> Teacher</label>
+    <br>
+    <input type="checkbox" id="Accountant" name="Accountant" value="Accountant">
+    <label for="Accountant"> Accountant</label>
+    <br>
+    <input type="checkbox" id="Salesperson" name="Salesperson" value="Salesperson">
+    <label for="Salesperson"> Salesperson</label>
+    <br>
+    <input type="checkbox" id="Other" name="Other" value="Other">
+    <label for="Other"> Other</label>
+    <br>
+    <p>Choose your BMI Category:</p>
+    <input type="checkbox" id="Normal Weight" name="Normal Weight" value="Normal Weight">
+    <label for="Normal Weight"> Normal Weight</label>
+    <br>
+    <input type="checkbox" id="Overweight" name="Overweight" value="Overweight">
+    <label for="Overweight"> Overweight</label>
+    <br>
+    <p>Choose your gender:</p>
+    <input type="checkbox" id="Male" name="Male" value="Male">
+    <label for="Male"> Male</label>
+    <br>
+    <input type="checkbox" id="Female" name="Female" value="Female">
+    <label for="Female"> Female</label>
+    <br>
+    <br>
+    <button type="submit" class="btn">Predict</button>
+</form>
+  </body>
 </html>

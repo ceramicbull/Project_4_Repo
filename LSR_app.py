@@ -16,7 +16,7 @@ def main_page():
     """
     Render the main page of the webapp.
     """
-    return render_template('index.html')
+    return render_template('LSR_index.html')
 
 
 
