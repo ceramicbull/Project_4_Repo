@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Lifestyle Patterns and Sleep Disorders</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+</body>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="#page-top">Project 4</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#visualizations">Visualizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#predict">Predict</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#authors">Authors</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-primary bg-gradient text-white">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bolder">Lifestyle Patterns and Sleep Disorders</h1>
+            <p class="lead">Explore lifestyle patterns and their effects on sleep disorders</p>
+            <a class="btn btn-lg btn-light" href="#predict">Will I Have a Sleep Disorder?</a>
+        </div>
+    </header>
+    <!-- Visualizations section-->
+    <section id="Visualizations">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <tableau-viz id="tableauViz"
+                        src="https://public.tableau.com/views/SleepDisordersandLifestyleFactors/Dashboard2?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
+                        toolbar="bottom" hide-tabs width="1000" height="1000">
+                    </tableau-viz>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Predict section-->
+    <section class="bg-light" id="services">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Fill out this form to see if you are at risk for a sleep disorder</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="text" class="form-control" id="age" name="age">
+                        </div>
+                        <div class="form-group">
+                            <label for="sleep_duration">Average Hours of Sleep:</label>
+                            <input type="text" class="form-control" id="sleep_duration" name="sleep_duration">
+                        </div>
+                        <div class="form-group">
+                            <label for="quality_of_sleep">Rate your quality of sleep on a scale from 1-10 with 1 being
+                                poor
+                                and 10 being perfect:</label>
+                            <input type="text" class="form-control" id="quality_of_sleep" name="quality_of_sleep">
+                        </div>
+                        <div class="form-group">
+                            <label for="physical_activity_level">Rate your level of physical activity on a scale of
+                                30-90
+                                with 30 being none and 90 being everyday:</label>
+                            <input type="text" class="form-control" id="physical_activity_level"
+                                name="physical_activity_level">
+                        </div>
+                        <div class="form-group">
+                            <label for="stress_level">Average level of stress on a scale of 1-10 with 1 being none and
+                                10
+                                being high:</label>
+                            <input type="text" class="form-control" id="stress_level" name="stress_level">
+                        </div>
+                        <div class="form-group">
+                            <label for="heart_rate">Average heart rate:</label>
+                            <input type="text" class="form-control" id="heart_rate" name="heart_rate">
+                        </div>
+                        <div class="form-group">
+                            <label for="daily_steps">Average number of daily steps:</label>
+                            <input type="text" class="form-control" id="daily_steps" name="daily_steps">
+                        </div>
+                        <div class="form-group">
+                            <label for="systolic_blood_pressure">Enter your systolic blood pressure:</label>
+                            <input type="text" class="form-control" id="systolic_blood_pressure"
+                                name="systolic_blood_pressure">
+                        </div>
+                        <div class="form-group">
+                            <label for="diastolic_blood_pressure">Enter your diastolic blood pressure:</label>
+                            <input type="text" class="form-control" id="diastolic_blood_pressure"
+                                name="diastolic_blood_pressure">
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">Choose your occupation:</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Nurse">
+                            <label class="form-check-label" for="Nurse"> Nurse</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Doctor">
+                            <label class="form-check-label" for="Doctor"> Doctor</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Engineer">
+                            <label class="form-check-label" for="Engineer"> Engineer</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Lawyer">
+                            <label class="form-check-label" for="Lawyer"> Lawyer</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Teacher">
+                            <label class="form-check-label" for="Teacher"> Teacher</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Accountant">
+                            <label class="form-check-label" for="Accountant"> Accountant</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Salesperson">
+                            <label class="form-check-label" for="Salesperson"> Salesperson</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Other">
+                            <label class="form-check-label" for="Other"> Other</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="BMI Category">Choose your BMI Category:</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Normal Weight">
+                            <label class="form-check-label" for="Normal Weight"> Normal Weight</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Overweight">
+                            <label class="form-check-label" for="Overweight"> Overweight</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="Gender">Choose your gender:</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Male">
+                            <label class="form-check-label" for="Male"> Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="Female">
+                            <label class="form-check-label" for="Female"> Female</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Predict</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Authors section-->
+    <section id="Authors">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Authors</h2>
+                    <p class="lead"></p>
+                    <ul>
+                        <li>Ben Chilcoat</li>
+                        <li>Chelsea Pickett</li>
+                        <li>Leigha Russel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-4">
+            <p class="m-0 text-center text-white">Copyright &copy; https://github.com/ceramicbull/Project_4_Repo</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
