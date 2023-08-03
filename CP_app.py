@@ -22,8 +22,8 @@ def home():
 
 @ app.route('/', methods=['POST'])
 def predict():
-
-    return render_template('CP_index.html', prediction_text='Test Result')
+    # BEN'S MODEL CODE GOES HERE
+    return "Test Prediction Result Successful"
 
 
 # Run app

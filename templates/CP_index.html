@@ -10,8 +10,10 @@
     <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../static/css/styles.css" rel="stylesheet" type="text/css" />
-    <!-- <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css" /> -->
     <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.4"
+        integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+        crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
@@ -46,7 +48,7 @@
                 <h2>Visualizations</h2>
             </div>
             <tableau-viz id="tableauViz"
-                src="https://public.tableau.com/views/SleepDisordersandLifestyleFactors/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link"
+                src="https://public.tableau.com/views/LifestylePatternsandSleepDisorders/Dashboard2?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
                 toolbar="bottom" hide-tabs width="2000" height="1000">
             </tableau-viz>
         </div>
@@ -59,114 +61,105 @@
                 <div class="col-lg-8">
                     <h2>Fill out this form to see if you are at risk for a sleep disorder</h2>
                     <!---Initialize form structure and inputs, set method to "POST"--->
-                    <form action="{{url_for('predict')}}" method="post" class="info">
-                        <div class="form-group">
+                    <form hx-boost="true" hx-target="#prediction-result" action="{{url_for('predict')}}" method="post"
+                        class="info">
+                        <div class="form-group mb-2">
                             <label for="age">Age:</label>
                             <input type="text" class="form-control" id="age" name="age">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="sleep_duration">Average Hours of Sleep:</label>
                             <input type="text" class="form-control" id="sleep_duration" name="sleep_duration">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="quality_of_sleep">Rate your quality of sleep on a scale from 1-10 with 1 being
                                 poor
                                 and 10 being perfect:</label>
                             <input type="text" class="form-control" id="quality_of_sleep" name="quality_of_sleep">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="physical_activity_level">Rate your level of physical activity on a scale of
                                 30-90
                                 with 30 being none and 90 being everyday:</label>
                             <input type="text" class="form-control" id="physical_activity_level"
                                 name="physical_activity_level">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="stress_level">Average level of stress on a scale of 1-10 with 1 being none and
                                 10
                                 being high:</label>
                             <input type="text" class="form-control" id="stress_level" name="stress_level">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="heart_rate">Average heart rate:</label>
                             <input type="text" class="form-control" id="heart_rate" name="heart_rate">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="daily_steps">Average number of daily steps:</label>
                             <input type="text" class="form-control" id="daily_steps" name="daily_steps">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="systolic_blood_pressure">Enter your systolic blood pressure:</label>
                             <input type="text" class="form-control" id="systolic_blood_pressure"
                                 name="systolic_blood_pressure">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="diastolic_blood_pressure">Enter your diastolic blood pressure:</label>
                             <input type="text" class="form-control" id="diastolic_blood_pressure"
                                 name="diastolic_blood_pressure">
                         </div>
-                        <div class="form-group">
-                            <label for="occupation">Choose your occupation:</label>
+                        <div class="form-group mb-2">
+                            <label for="Choose your occupation">Choose your occupation:</label>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Nurse">
-                            <label class="form-check-label" for="Nurse"> Nurse</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Doctor">
-                            <label class="form-check-label" for="Doctor"> Doctor</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Engineer">
-                            <label class="form-check-label" for="Engineer"> Engineer</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Lawyer">
-                            <label class="form-check-label" for="Lawyer"> Lawyer</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Teacher">
-                            <label class="form-check-label" for="Teacher"> Teacher</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Accountant">
-                            <label class="form-check-label" for="Accountant"> Accountant</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Salesperson">
-                            <label class="form-check-label" for="Salesperson"> Salesperson</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Other">
-                            <label class="form-check-label" for="Other"> Other</label>
-                        </div>
-                        <div class="form-group">
+                        <select class="form-select mb-2" aria-label="Default select example">
+                            <option selected></option>
+                            <option value="nurse">Nurse</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="engineer">Engineer</option>
+                            <option value="lawyer">Lawyer</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="accountant">Accountant</option>
+                            <option value="salesperson">Salesperson</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="form-group mb-2">
                             <label for="BMI Category">Choose your BMI Category:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="bmi" id="flexRadioDefault1"
+                                    value="normal-weight">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Normal Weight
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="bmi" id="flexRadioDefault2"
+                                    value="overweight">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Overweight
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Normal Weight">
-                            <label class="form-check-label" for="Normal Weight"> Normal Weight</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Overweight">
-                            <label class="form-check-label" for="Overweight"> Overweight</label>
-                        </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="Gender">Choose your gender:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault3"
+                                    value="male">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault4"
+                                    value="female">
+                                <label class="form-check-label" for="flexRadioDefault4">
+                                    Female
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Male">
-                            <label class="form-check-label" for="Male"> Male</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="Female">
-                            <label class="form-check-label" for="Female"> Female</label>
-                        </div>
-                        <button type="submit" class="btn btn-success">Predict</button>
+                        <button type="submit" class="btn btn-success my-2">Predict</button>
                     </form>
                     <!---Set placeholder for prediction output--->
-                    <div class="pred">
-                        <p class="result">{{ prediction_text }}</p>
+                    <div id="prediction-result">
                     </div>
                 </div>
             </div>
@@ -177,16 +170,18 @@
         <div class="container px-4">
             <div class="row gx-4 text-center">
                 <h2>Authors</h2>
-                <p>Ben Chilcoat</p>
-                <p>Chelsea Pickett</p>
-                <p>Leigha Russell</p>
+                <a href="https://github.com/ceramicbull" target="_blank">Ben Chilcoat</a>
+                <a href="https://github.com/chelseapickett" target="_blank">Chelsea Pickett</a>
+                <a href="https://github.com/lrussell834" target="_blank">Leigha Russell</a>
             </div>
         </div>
     </section>
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container px-4">
-            <p class="m-0 text-center text-white">Copyright &copy; https://github.com/ceramicbull/Project_4_Repo</p>
+            <p class="m-0 text-center text-white">Copyright &copy; <a
+                    href="https://github.com/ceramicbull/Project_4_Repo">Lifestyle Patterns and Sleep Disorders on
+                    GitHub</a>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
