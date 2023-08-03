@@ -35,29 +35,47 @@ bmi_keys=['Normal Weight',
 #keys for gender category
 gen_keys=['Female', 'Male']
 
+#example output
+#ImmutableMultiDict([
+#    ('age', '37'),
+#    ('sleep_duration', '6'),
+#    ('quality_of_sleep', '7'),
+#    ('physical_activity_level', '40'),
+#    ('stress_level', '6'),
+#    ('heart_rate', '70'),
+#    ('daily_steps', '5000'),
+#    ('systolic_blood_pressure', '130'),
+#    ('diastolic_blood_pressure', '80'),
+#    ('career', 'Other'),
+#    ('bmi', 'Overweight'),
+#    ('gender', 'Male')])
+
 
 #################################################
 # Flask Setup
 #################################################
-app = Flask(__name__, template_folder = 'template')
+app = Flask(__name__, template_folder = 'templates')
 
 
 
 #################################################
 # Flask Routes
 #################################################
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def main_page():
     """
     Render the main page of the webapp.
     """
-    return render_template('templates\BC_index.html')
+    
+    return render_template('BC_index.html')
+
 
 #Set a post method to yield predictions on page
-@app.route('/', methods = ['POST'])
+@app.route('/predict', methods = ['POST'])
 def predict():
     
     #obtain all form values and convert to pandas df
+    print(request.form)
     input_df=pd.DataFrame(request.form.values())
     #ensure DataFrame is in correct order:
     input_df=input_df[keys]
@@ -69,7 +87,7 @@ def predict():
     
     #If the output is negative, the values entered are unreasonable to the context of the application
     #If the output is greater than 0, return prediction
-    if prediction < 0.5:
+    if prediction < 0.5 & prediction>0:
         return render_template('index.html', prediction_text = "It is unlikely that you have a Sleeping Disorder.")
     elif output >= 0.5:
         return render_template('index.html', prediction_text = "It is likely that you have a Sleeping Disorder.")   
