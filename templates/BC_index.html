@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lifestyle Patterns and Sleep Disorders</title>
+    <!-- Tableau -->
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+<body>
+    <div class = 'title'>
+        <h1>Sleep Disorder Information and Predictor</h1>
+    </div>
+
+    <!---Tableau Visualization-->
+<tableau-viz id="tableauViz"
+    src="https://public.tableau.com/views/Project4_16908592015390/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
+    toolbar="bottom" hide-tabs>
+</tableau-viz>
+
+
+<p class="subtitle"><b>Fill out this form to see if you are at risk for a sleep disorder</b>
+</p>
+
+<form>
+    <label for="age">Age:</label>
+    <br>
+    <input type="text" id="age" name="age" required="required">
+    <br>
+    <br>
+    <label for="sleep_duration">Average Hours of Sleep:</label>
+    <br>
+    <input type="text" id="sleep_duration" name="sleep_duration" required="required">
+    <br>
+    <br>
+    <label for="quality_of_sleep">Rate your quality of sleep on a scale from 1-10 with 1 being poor and 10 being perfect:</label>
+    <br>
+    <input type="text" id="quality_of_sleep" name="quality_of_sleep" required="required">
+    <br>
+    <br>
+    <label for="physical_activity_level">Rate your level of physical activity on a scale of 30-90 with 30 being none and 90 being everyday:</label>
+    <br>
+    <input type="text" id="physical_activity_level" name="physical_activity_level" required="required">
+    <br>
+    <br>
+    <label for="stress_level">Average level of stress on a scale of 1-10 with 1 being none and 10 being high:</label>
+    <br>
+    <input type="text" id="stress_level" name="stress_level" required="required">
+    <br>
+    <br>
+    <label for="heart_rate">Average heart rate:</label>
+    <br>
+    <input type="text" id="heart_rate" name="heart_rate" required="required">
+    <br>
+    <br>
+    <label for="daily_steps">Average number of daily steps:</label>
+    <br>
+    <input type="text" id="daily_steps" name="daily_steps" required="required">
+    <br>
+    <br>
+    <label for="systolic_blood_pressure">Enter your systolic blood pressure:</label>
+    <br>
+    <input type="text" id="systolic_blood_pressure" name="systolic_blood_pressure" required="required">
+    <br>
+    <br>
+    <label for="diastolic_blood_pressure">Enter your diastolic blood pressure:</label>
+    <br>
+    <input type="text" id="diastolic_blood_pressure" name="diastolic_blood_pressure" required="required">
+    <br>
+    <br>
+    <label for="career">Are you employed in any of the following occupations?</label>
+    <select name="career" id="career">
+        <option value="Accountant"> Accountant </option>
+        <option value="Doctor"> Doctor </option>
+        <option value="Engineer"> Engineer </option>
+        <option value="Lawyer"> Lawyer </option>
+        <option value="Nurse"> Nurse </option>
+        <option value="Other"> Other </option>
+        <option value="Salesperson"> Salesperson </option>
+        <option value="Teacher"> Teacher </option>
+    </select>
+    <br>
+    <label for="bmi">Would you consider yourself:</label>
+    <select name="bmi" id="bmi">
+        <option value="Normal Weight">Normal Weight</option>
+        <option value="Overweight">Overweight</option>
+    </select>
+    <br>
+    <label for="gender">Would you consider yourself:</label>
+    <select name="gender" id="gender">
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+    </select>
+    
+    
+    <br>
+    <br>
+    <button type="submit" class="btn">Predict</button>
+</form>
+  </body>
+</html>
