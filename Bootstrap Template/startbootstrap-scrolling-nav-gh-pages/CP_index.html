@@ -12,7 +12,6 @@
     <link href="css/styles.css" rel="stylesheet" />
     <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 </head>
-</body>
 
 <body id="page-top">
     <!-- Navigation-->
@@ -32,7 +31,7 @@
         </div>
     </nav>
     <!-- Header-->
-    <header class="bg-primary bg-gradient text-white">
+    <header class="bg-success bg-gradient text-white">
         <div class="container px-4 text-center">
             <h1 class="fw-bolder">Lifestyle Patterns and Sleep Disorders</h1>
             <p class="lead">Explore lifestyle patterns and their effects on sleep disorders</p>
@@ -40,20 +39,20 @@
         </div>
     </header>
     <!-- Visualizations section-->
-    <section id="Visualizations">
+    <section id="visualizations">
         <div class="container px-4">
-            <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8">
-                    <tableau-viz id="tableauViz"
-                        src="https://public.tableau.com/views/SleepDisordersandLifestyleFactors/Dashboard2?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
-                        toolbar="bottom" hide-tabs width="1000" height="1000">
-                    </tableau-viz>
-                </div>
+            <div class="row gx-4 text-center">
+                <h2>Visualizations</h2>
             </div>
+            <tableau-viz id="tableauViz"
+                src="https://public.tableau.com/views/SleepDisordersandLifestyleFactors/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link"
+                toolbar="bottom" hide-tabs width="2000" height="1000">
+            </tableau-viz>
+        </div>
         </div>
     </section>
     <!-- Predict section-->
-    <section class="bg-light" id="services">
+    <section class="bg-light" id="predict">
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
@@ -161,25 +160,20 @@
                             <input type="checkbox" class="form-check-input" id="Female">
                             <label class="form-check-label" for="Female"> Female</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Predict</button>
+                        <button type="submit" class="btn btn-success">Predict</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
     <!-- Authors section-->
-    <section id="Authors">
+    <section id="authors">
         <div class="container px-4">
-            <div class="row gx-4 justify-content-center">
-                <div class="col-lg-8">
-                    <h2>Authors</h2>
-                    <p class="lead"></p>
-                    <ul>
-                        <li>Ben Chilcoat</li>
-                        <li>Chelsea Pickett</li>
-                        <li>Leigha Russel</li>
-                    </ul>
-                </div>
+            <div class="row gx-4 text-center">
+                <h2>Authors</h2>
+                <p>Ben Chilcoat</p>
+                <p>Chelsea Pickett</p>
+                <p>Leigha Russel</p>
             </div>
         </div>
     </section>
