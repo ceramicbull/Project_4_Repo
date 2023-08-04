@@ -61,21 +61,22 @@
                 <div class="col-lg-8">
                     <h2>Fill out this form to see if you are at risk for a sleep disorder</h2>
                     <!---Initialize form structure and inputs, set method to "POST"--->
-                    <form hx-boost="true" hx-target="#prediction-result" action="/predict" method="post"
-                        class="info">
+                    <form hx-boost="true" hx-target="#prediction-result" action="/predict" method="post" class="info">
                         <div class="form-group mb-2">
                             <label for="age">Age:</label>
                             <input type="text" class="form-control" id="age" name="age" required="required">
                         </div>
                         <div class="form-group mb-2">
                             <label for="sleep_duration">Average Hours of Sleep:</label>
-                            <input type="text" class="form-control" id="sleep_duration" name="sleep_duration" required="required">
+                            <input type="text" class="form-control" id="sleep_duration" name="sleep_duration"
+                                required="required">
                         </div>
                         <div class="form-group mb-2">
                             <label for="quality_of_sleep">Rate your quality of sleep on a scale from 1-10 with 1 being
                                 poor
                                 and 10 being perfect:</label>
-                            <input type="text" class="form-control" id="quality_of_sleep" name="quality_of_sleep" required="required">
+                            <input type="text" class="form-control" id="quality_of_sleep" name="quality_of_sleep"
+                                required="required">
                         </div>
                         <div class="form-group mb-2">
                             <label for="physical_activity_level">Rate your level of physical activity on a scale of
@@ -88,15 +89,18 @@
                             <label for="stress_level">Average level of stress on a scale of 1-10 with 1 being none and
                                 10
                                 being high:</label>
-                            <input type="text" class="form-control" id="stress_level" name="stress_level" required="required">
+                            <input type="text" class="form-control" id="stress_level" name="stress_level"
+                                required="required">
                         </div>
                         <div class="form-group mb-2">
                             <label for="heart_rate">Average heart rate:</label>
-                            <input type="text" class="form-control" id="heart_rate" name="heart_rate" required="required">
+                            <input type="text" class="form-control" id="heart_rate" name="heart_rate"
+                                required="required">
                         </div>
                         <div class="form-group mb-2">
                             <label for="daily_steps">Average number of daily steps:</label>
-                            <input type="text" class="form-control" id="daily_steps" name="daily_steps" required="required">
+                            <input type="text" class="form-control" id="daily_steps" name="daily_steps"
+                                required="required">
                         </div>
                         <div class="form-group mb-2">
                             <label for="systolic_blood_pressure">Enter your systolic blood pressure:</label>
@@ -125,14 +129,14 @@
                             <label for="bmi">Choose your BMI Category:</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="bmi" id="flexRadioDefault1"
-                                value="Normal Weight">
+                                    value="Normal Weight">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Normal Weight
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="bmi" id="flexRadioDefault2"
-                                value="Overweight">
+                                    value="Overweight">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Overweight
                                 </label>
@@ -142,14 +146,14 @@
                             <label for="Gender">Choose your gender:</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault3"
-                                value="Male">
+                                    value="Male">
                                 <label class="form-check-label" for="flexRadioDefault3">
                                     Male
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault4"
-                                value="Female">
+                                    value="Female">
                                 <label class="form-check-label" for="flexRadioDefault4">
                                     Female
                                 </label>
@@ -160,6 +164,8 @@
                     <!---Set placeholder for prediction output--->
                     <div id="prediction-result">
                     </div>
+                    <p class="text-muted mt-4"><small>*This result is not a diagnosis and should not be taken as medical
+                            advice.</small></p>
                 </div>
             </div>
         </div>
