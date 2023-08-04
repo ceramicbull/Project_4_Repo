@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 from flask import Flask, render_template
 
@@ -11,14 +12,20 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
-@app.route("/")
-def main_page():
-    """
-    Render the main page of the webapp.
-    """
+# create our "home" route using the "index.html" page
+@app.route('/')
+def home():
     return render_template('index.html')
 
+# Set a post method to yield predictions on page
 
 
-if __name__ == '__main__':
+@ app.route('/', methods=['POST'])
+def predict():
+    # BEN'S MODEL CODE GOES HERE
+    return "Test Prediction Result Successful"
+
+
+# Run app
+if __name__ == "__main__":
     app.run(debug=True)
