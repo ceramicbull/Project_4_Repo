@@ -107,7 +107,7 @@ def predict():
         return "You are not likely to have a sleeping disorder."
     # if between .5 and 1, yes disorder:
     elif (prediction >= 0.5) & (prediction < 1):
-        return "You may be at risk for a Sleeping Disorder."
+        return "You may be at risk for a sleeping disorder."
     # otherwise, something is wrong:
     else:
         return "Uh oh. Something went wrong."
