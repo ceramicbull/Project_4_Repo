@@ -145,12 +145,15 @@ def predict():
     print(prediction)
    
     
-    #If the output is negative, the values entered are unreasonable to the context of the application
-    #If the output is greater than 0, return prediction
+    
+    #prediction output:
+    #if between 0 and .5, no disorder:
     if (prediction < 0.5) & (prediction >= 0):
         return render_template('BC_index.html', prediction_text = "It is unlikely that you have a Sleeping Disorder.")
+    #if between .5 and 1, yes disorder:
     elif (prediction >= 0.5) & (prediction < 1):
-        return render_template('BC_index.html', prediction_text = "It is likely that you have a Sleeping Disorder.")   
+        return render_template('BC_index.html', prediction_text = "It is likely that you have a Sleeping Disorder.")
+    #otherwise, something is wrong:   
     else: 
         return render_template('BC_index.html', prediction_text = "Uh oh. Something went wrong.")   
 #Run app
