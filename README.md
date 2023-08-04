@@ -42,7 +42,8 @@ The neural network model using one binary 'y' feature was determined to have the
 ## Index
  [app.py](https://github.com/ceramicbull/Project_4_Repo/blob/main/app.py)  
  [Index.html](https://github.com/ceramicbull/Project_4_Repo/blob/main/templates/index.html)   
- [Logistic Regression/Decision Tree/Random Forest Models](https://github.com/ceramicbull/Project_4_Repo/tree/main/Logistic%20Regression)  - [Neural Network Models](https://github.com/ceramicbull/Project_4_Repo/tree/main/NN)    
+ [Logistic Regression/Decision Tree/Random Forest Models](https://github.com/ceramicbull/Project_4_Repo/tree/main/Logistic%20Regression)  - [Neural Network Models](https://github.com/ceramicbull/Project_4_Repo/tree/main/NN)      
+ [Slide deck](https://docs.google.com/presentation/d/1LB59TGCeNBc9BzVj1jBBx5BR8IZXCjS_jf5XU5wd6EI/edit#slide=id.g25eabba6b9a_0_762)  
  [Source Data (cleaned)](https://github.com/ceramicbull/Project_4_Repo/blob/main/data/Sleep_health_mk1.csv)   
  [SQLite Database setup](https://github.com/ceramicbull/Project_4_Repo/blob/main/database_setup.py)  
  [Tableau Dashboard](https://public.tableau.com/app/profile/chelsea.pickett7387/viz/LifestylePatternsandSleepDisorders/Dashboard2) 
