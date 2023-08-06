@@ -14,7 +14,7 @@ The data was preprocessed and cleaned further for training and testing the model
 - [Neural Network](https://github.com/ceramicbull/Project_4_Repo/tree/main/NN)  
 
 ## Model Optimization and Results
-The logistic regression, decision tree and random forest models were evaluated by calculating an accuracy score, creating a classification report, confusion matrix and looking at the features importance. The neural network model was optimized by utilizing KerasTuner and calculating the difference between using 1 or 3 'y' categories in the model.  
+The logistic regression, decision tree and random forest models were evaluated by calculating an accuracy score, creating a classification report, confusion matrix and looking at the features importance. The neural network model was optimized by utilizing the KerasTuner auto optimizer and calculating the difference between using 1 binary 'y' feature (no sleep disorder/sleep disorder) or 3 categorical 'y' features in the model (no sleep disorder/sleep apnea/insomnia).  
 
 The following shows the comparisons between the various models used:
 
